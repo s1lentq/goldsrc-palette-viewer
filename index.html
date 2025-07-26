@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="description" content="GoldSrc Palette Viewer – simple browser-based tool to view palette.lmp files from classic Half-Life and CS 1.6 mods.">
+	<meta property="og:title" content="GoldSrc Palette Viewer">
+	<meta property="og:description" content="Simple viewer for palette.lmp used in GoldSrc games like CS 1.6 and Half-Life.">
+	<title>GoldSrc Palette Viewer</title>
+	<style>
+		#palette {
+			display: grid;
+			grid-template-columns: repeat(16, 40px);
+			gap: 2px;
+			margin-top: 20px;
+		}
+		.color {
+			width: 40px;
+			height: 40px;
+			border: 1px solid #000;
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			color: #fff;
+			font-size: 12px;
+			position: relative;
+			cursor: default;
+		}
+		.color-label {
+			cursor: pointer;
+			background: rgba(0, 0, 0, 0.05);
+			padding: 2px 4px;
+			border-radius: 3px;
+			user-select: none;
+			transition: background-color 0.2s, color 0.2s;
+		}
+		.color-label:hover {
+			background-color: rgba(255, 255, 255, 0.2);
+			color: #000;
+		}
+	</style>
+</head>
+<body>
+	<h1>GoldSrc Palette Viewer</h1>
+	<input type="file" id="fileInput">
+	<div id="palette" />
+	<script src="viewer.js"></script>
+</body>
+</html>
